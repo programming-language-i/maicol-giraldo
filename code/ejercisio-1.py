@@ -15,6 +15,8 @@ for i in range(5):
     sensor_thread = threading.Thread(target=sensor_temperatura, args=(i+1,))  
     sensor_thread.start()
 
+print("Lectura de sensores completa.")
+
 
 
 

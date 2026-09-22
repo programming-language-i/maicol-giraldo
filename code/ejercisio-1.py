@@ -1,19 +1,20 @@
-import threading 
+# crear 5 sensores a partir de hilos y que den su temperatura.
+
+import threading
+import random
 import time
 
-
-def imprimir_mensaje():
-    for i in range(5):
-        print(f"{i + 1} hello")
-        time.sleep(1)
-
-def main():
-    thread = threading.Thread(target=imprimir_mensaje)
-    thread.start()
+def sensor_temperatura(sensor_id):
+    while True:
+        temperatura = random.uniform(20.0, 30.0)  
+        print(f"Sensor {sensor_id}: {temperatura:.2f} °C")
+        time.sleep(random.uniform(1, 3))  
 
 
-    print("finished")
+for i in range(5):
+    sensor_thread = threading.Thread(target=sensor_temperatura, args=(i+1,))  
+    sensor_thread.start()
 
 
-if __name__ == "__main__":
-    main() 
+
+

@@ -15,10 +15,16 @@ def tarea(n):
 
 
 inicio = time.perf_counter()
+## hilos = []
+
 for i in range(3):
     hilo = threading.Thread(target=tarea, args=(i,))
+    ## hilos.append(hilo)  
     hilo.start()
-    hilo.join()
+    ## hilo.join() ## Aqui esta el problema como tal del codigo.(este hilo.join()se quita y se pone al final del for, para que los hilos se ejecuten de manera concurrente)
+    ##for hilo in hilos:
+    ##hilo.join()
+
 print(f"{time.perf_counter() - inicio:.1f} s")
 
 

@@ -1,7 +1,7 @@
 
 ### B3. Una excepción en el pool
 
-```python
+##python
 from concurrent.futures import ThreadPoolExecutor
 
 

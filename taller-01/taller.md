@@ -261,11 +261,22 @@ with ProcessPoolExecutor(max_workers=2) as pool:
 Para cada programa, elegir **hilos** o **procesos** y justificar en una línea *(¿espera o calcula?)*.
 
 1. Consultar el precio de 30 productos en 30 APIs distintas.
+R:Hilos:justificacion:ESPERA,es una tarea I/O-bound limitada por la red, donde los hilos esperan multiples respuestas sin bloquearse.
+
 2. Contar las palabras palíndromas de 10 libros ya cargados en memoria.
+R:Precesos:justificacion:CALCULA, es una tarea CPU-bound de procesamiento de texto intensivo, donde los procesos permiten aprovechar múltiples núcleos y evitar las restricciones del GIL de Python.
+
 3. Un servidor de chat que atiende 15 clientes conectados.
+R:Hilos:justificacion:ESPERA, es una tarea I/O-bound de red, donde los hilos permiten gestionar múltiples conexiones y esperar los mensajes entrantes de los clientes de forma concurrente.
+
 4. Aplicar un filtro de desenfoque a 200 fotos, píxel por píxel, en Python puro.
+R:Procesos:justificacion:CALCULA, es una tarea intensiva CPU-bound de procesamiento matemático sobre datos, donde los procesos permiten aprovechar múltiples núcleos y superar las limitaciones del GIL.
+
 5. Leer 50 archivos de log del disco y copiarlos a otra carpeta.
+R:Hilos:justificacion:ESPERA, es una tarea I/O-bound de E/S de disco, donde los hilos permiten gestionar la lectura y escritura de archivos concurrentemente mientras esperan al hardware de almacenamiento.
+
 6. Simular 1.000.000 de lanzamientos de dados en 8 lotes y promediar.
+R:Procesos:justificacion:CALCULA, es una tarea intensiva CPU-bound de procesamiento numérico, donde los procesos permiten paralelizar el cálculo en múltiples núcleos y evitar las restricciones del GIL.
 
 ---
 

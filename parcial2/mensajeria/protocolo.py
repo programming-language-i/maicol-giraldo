@@ -70,4 +70,5 @@ def recibir_mensaje(sock: socket.socket) -> str | None:
     if cuerpo is None:
         return None
     return cuerpo.decode("utf-8")##aqui estamos decodificando el cuerpo de bytes a string usando UTF-8 y devolviendo
-     ##el mensaje completo
+     ##el mensaje completo y terminamos.
+     

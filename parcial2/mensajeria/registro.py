@@ -58,5 +58,6 @@ def destinatarios(self, excepto: str) -> list[tuple[str, socket.socket]]:##aqui 
     ##recibe un nombre y devuelve una lista de tuplas
     ##con los nombres y conexiones de todos los clientes conectados, excepto el cliente especificado
         with self._lock:
-            return [(nombre, conexion) for nombre, conexion in self._clientes.items() if nombre != excepto]
+            return [(nombre, conexion) for nombre, conexion in self._clientes.items() if nombre != excepto]##aqui se realiza el
+        ##retorno de las funciones
     
